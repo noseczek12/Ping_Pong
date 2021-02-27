@@ -21,6 +21,8 @@ __published:	// IDE-managed Components
         TLabel *Label2;
         TImage *counter_1;
         TImage *counter_2;
+        TTimer *timer_b;
+        void __fastcall timer_bTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
