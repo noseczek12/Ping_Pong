@@ -22,7 +22,19 @@ __published:	// IDE-managed Components
         TImage *counter_1;
         TImage *counter_2;
         TTimer *timer_b;
+        TTimer *p1_down;
+        TTimer *p1_up;
+        TTimer *p2_up;
+        TTimer *p2_down;
         void __fastcall timer_bTimer(TObject *Sender);
+        void __fastcall p1_upTimer(TObject *Sender);
+        void __fastcall p1_downTimer(TObject *Sender);
+        void __fastcall p2_upTimer(TObject *Sender);
+        void __fastcall p2_downTimer(TObject *Sender);
+        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+          TShiftState Shift);
+        void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
+          TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

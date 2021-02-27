@@ -40,3 +40,41 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
         }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::p1_upTimer(TObject *Sender)
+{
+        if(p1->Top > 10) p1->Top -= 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::p1_downTimer(TObject *Sender)
+{
+        if(p1->Top + p1->Height < tlo->Height-10) p1->Top += 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::p2_upTimer(TObject *Sender)
+{
+        if(p2->Top > 10) p2->Top -= 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::p2_downTimer(TObject *Sender)
+{
+        if(p2->Top + p2->Height < tlo->Height-10) p2->Top += 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+        if(Key==0x57) p1_up->Enabled = true;
+        if(Key==0x53) p1_down->Enabled = true;
+        if(Key==VK_UP) p2_up->Enabled = true;
+        if(Key==VK_DOWN) p2_down->Enabled = true;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+        if(Key==0x57) p1_up->Enabled = false;
+        if(Key==0x53) p1_down->Enabled = false;
+        if(Key==VK_UP) p2_up->Enabled = false;
+        if(Key==VK_DOWN) p2_down->Enabled = false;
+}
+//---------------------------------------------------------------------------

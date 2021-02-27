@@ -5,12 +5,16 @@ object Form1: TForm1
   Height = 788
   Caption = 'Ping Pong'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object tlo: TImage
@@ -57195,5 +57199,33 @@ object Form1: TForm1
     OnTimer = timer_bTimer
     Left = 16
     Top = 16
+  end
+  object p1_down: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = p1_downTimer
+    Left = 48
+    Top = 56
+  end
+  object p1_up: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = p1_upTimer
+    Left = 16
+    Top = 56
+  end
+  object p2_up: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = p2_upTimer
+    Left = 1112
+    Top = 56
+  end
+  object p2_down: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = p2_downTimer
+    Left = 1144
+    Top = 56
   end
 end
