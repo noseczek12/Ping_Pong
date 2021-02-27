@@ -14,6 +14,9 @@ int player_2_points = 0;
 
 void resetGame()
 {
+        Application->ProcessMessages(); Sleep(2000);
+        Form1->counter_1->Visible=false;
+        Form1->counter_2->Visible=false;
         Form1->b->Left=584;
         Form1->b->Top = 344;
         Form1->b->Visible = true;
@@ -27,6 +30,124 @@ void resetGame()
         }
 
         Form1->timer_b->Enabled=true;
+}
+
+void printCounter1(int points1)
+{
+        if(points1 ==0)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d0.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==1)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d1.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==2)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d2.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==3)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d3.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==4)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d4.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==5)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d5.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==6)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d6.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==7)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d7.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==8)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d8.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==9)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d9.bmp");
+           Form1->counter_1->Visible=true;
+        }
+        if(points1 ==10)
+        {
+           Form1->counter_1->Picture->LoadFromFile("img/d10.bmp");
+           Form1->counter_1->Visible=true;
+        }
+}
+
+void printCounter2(int points2)
+{
+        if(points2 ==0)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d0.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==1)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d1.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==2)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d2.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==3)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d3.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==4)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d4.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==5)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d5.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==6)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d6.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==7)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d7.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==8)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d8.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==9)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d9.bmp");
+           Form1->counter_2->Visible=true;
+        }
+        if(points2 ==10)
+        {
+           Form1->counter_2->Picture->LoadFromFile("img/d10.bmp");
+           Form1->counter_2->Visible=true;
+        }
 }
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -51,7 +172,8 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
            timer_b->Enabled = false;
            b->Visible = false;
            player_2_points++;
-           //printCounters();
+           printCounter1(player_1_points);
+           printCounter2(player_2_points);
            resetGame();
 
         } else if (b->Top > p1->Top && b->Top < p1->Top + p1->Height && b->Left < p1->Left+p1->Width)
@@ -64,7 +186,8 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
            timer_b->Enabled = false;
            b->Visible = false;
            player_1_points++;
-           //printCounters();
+           printCounter1(player_1_points);
+           printCounter2(player_2_points);
            resetGame();
 
         }
@@ -130,11 +253,14 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
+        player_1_points = 0;
+        player_2_points = 0;
+
         b->Left=584;
-        b->Top = 344;
+        b->Top =344;
         b->Visible = true;
         x=-8; y=-8;
         timer_b->Enabled=true;
-        Button1->Visible = false;
+        Button1->Visible=false;
 }
 //---------------------------------------------------------------------------

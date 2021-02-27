@@ -56894,6 +56894,7 @@ object Form1: TForm1
       F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9
       0F000000000000000000000000000000000AF9F9F9F9F9F9F9F9F9F9F9F9F9F9
       F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F90E00000000000000000000}
+    Visible = False
   end
   object counter_2: TImage
     Left = 680
@@ -57084,6 +57085,7 @@ object Form1: TForm1
       F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9
       0F000000000000000000000000000000000AF9F9F9F9F9F9F9F9F9F9F9F9F9F9
       F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F90E00000000000000000000}
+    Visible = False
   end
   object b: TImage
     Left = 584
@@ -57211,35 +57213,35 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object timer_b: TTimer
-    Interval = 60
+    Interval = 15
     OnTimer = timer_bTimer
     Left = 16
     Top = 16
   end
   object p1_down: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 15
     OnTimer = p1_downTimer
     Left = 48
     Top = 56
   end
   object p1_up: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 15
     OnTimer = p1_upTimer
     Left = 16
     Top = 56
   end
   object p2_up: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 15
     OnTimer = p2_upTimer
     Left = 1112
     Top = 56
   end
   object p2_down: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 15
     OnTimer = p2_downTimer
     Left = 1144
     Top = 56
