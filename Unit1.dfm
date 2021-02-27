@@ -57193,7 +57193,7 @@ object Form1: TForm1
   object timer_b: TTimer
     Interval = 15
     OnTimer = timer_bTimer
-    Left = 32
-    Top = 24
+    Left = 16
+    Top = 16
   end
 end
