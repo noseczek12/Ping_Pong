@@ -26,6 +26,7 @@ __published:	// IDE-managed Components
         TTimer *p1_up;
         TTimer *p2_up;
         TTimer *p2_down;
+        TButton *Button1;
         void __fastcall timer_bTimer(TObject *Sender);
         void __fastcall p1_upTimer(TObject *Sender);
         void __fastcall p1_downTimer(TObject *Sender);
@@ -35,6 +36,7 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
+        void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
