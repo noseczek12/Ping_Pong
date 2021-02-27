@@ -57195,7 +57195,7 @@ object Form1: TForm1
       F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F9F90E00000000000000000000}
   end
   object timer_b: TTimer
-    Interval = 15
+    Interval = 60
     OnTimer = timer_bTimer
     Left = 16
     Top = 16

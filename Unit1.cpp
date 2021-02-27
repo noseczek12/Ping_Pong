@@ -8,7 +8,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-int x=-8, y=-8;
+int x=-8, y=8;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -27,16 +27,23 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
         // bounce from bottom
         if(b->Top + b->Height +5 >= tlo->Height) y=-y;
         // lose ball on the left side
-        if(b->Left <= p1->Left +15)
+        if(b->Left <= p1->Left-30)
+        {
+           timer_b->Enabled = false;
+           b->Visible = false;
+        } else if (b->Top > p1->Top && b->Top < p1->Top + p1->Height && b->Left < p1->Left+p1->Width)
+        {
+           if(x<0) x=-x;
+        }
+        // lose ball on the right side
+        if(b->Left + b->Width >= p2->Left + p2->Width + 30)
         {
            timer_b->Enabled = false;
            b->Visible = false;
         }
-        // lose ball on the right side
-        if(b->Left + b->Width >= p2->Left + p2->Width + 15)
+        else if (b->Top > p2->Top && b->Top < p2->Top + p2->Height && b->Left+b->Width > p2->Left)
         {
-           timer_b->Enabled = false;
-           b->Visible = false;
+           if(x>0) x=-x;
         }
 }
 //---------------------------------------------------------------------------
