@@ -7,10 +7,20 @@
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
+#include <ExtCtrls.hpp>
+#include <Graphics.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
+        TImage *tlo;
+        TImage *b;
+        TImage *p1;
+        TImage *p2;
+        TLabel *Label1;
+        TLabel *Label2;
+        TImage *counter_1;
+        TImage *counter_2;
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
@@ -19,4 +29,3 @@ public:		// User declarations
 extern PACKAGE TForm1 *Form1;
 //---------------------------------------------------------------------------
 #endif
- 
