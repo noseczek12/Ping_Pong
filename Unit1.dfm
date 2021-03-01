@@ -57214,6 +57214,7 @@ object Form1: TForm1
     ParentFont = False
     Transparent = True
     Layout = tlCenter
+    Visible = False
   end
   object Button1: TButton
     Left = 344

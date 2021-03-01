@@ -295,7 +295,8 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 {
        Form1->timer_b->Enabled = false;
        Form1->btnShowMsg->Click();
-       showStart();
+       Form1->timer_b->Enabled = true;
+       //showStart();
 }
 //---------------------------------------------------------------------------
 
