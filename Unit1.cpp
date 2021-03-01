@@ -12,7 +12,21 @@ int x=-8, y=-8;
 int player_1_points = 0;
 int player_2_points = 0;
 
-void resetGame()
+
+void showStart()
+{
+        Form1->Label3->Caption = "Gra rozpocznie siê za: 3";
+        Application->ProcessMessages(); Sleep(1000);
+        Form1->Label3->Caption = "Gra rozpocznie siê za: 2";
+        Application->ProcessMessages(); Sleep(1000);
+        Form1->Label3->Caption = "Gra rozpocznie siê za: 1";
+        Application->ProcessMessages(); Sleep(1000);
+        Form1->Label3->Caption = "Powodzenia !";
+        Form1->Label3->Enabled = false;
+        Form1->timer_b->Enabled = true;
+}
+
+void resetGame(int whoseBall)
 {
         Application->ProcessMessages(); Sleep(2000);
         Form1->counter_1->Visible=false;
@@ -20,11 +34,11 @@ void resetGame()
         Form1->b->Left=584;
         Form1->b->Top = 344;
         Form1->b->Visible = true;
-        if(player_1_points > player_2_points)
+        if(whoseBall==1)
         {
            x=-8; y=-8;
         }
-        else
+        if(whoseBall==2)
         {
            x=8; y=-8;
         }
@@ -174,7 +188,7 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
            player_2_points++;
            printCounter1(player_1_points);
            printCounter2(player_2_points);
-           resetGame();
+           resetGame(2);
 
         } else if (b->Top > p1->Top && b->Top < p1->Top + p1->Height && b->Left < p1->Left+p1->Width)
         {
@@ -188,7 +202,7 @@ void __fastcall TForm1::timer_bTimer(TObject *Sender)
            player_1_points++;
            printCounter1(player_1_points);
            printCounter2(player_2_points);
-           resetGame();
+           resetGame(1);
 
         }
         else if (b->Top > p2->Top && b->Top < p2->Top + p2->Height && b->Left+b->Width > p2->Left)
@@ -264,3 +278,24 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
         Button1->Visible=false;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::btnShowMsgClick(TObject *Sender)
+{
+        AnsiString strMessage1 = "Zapraszam ciê do gry w ping ponga.";
+	AnsiString strMessage2 = "Gracz 1 korzysta z klawiszy W i S.";
+	AnsiString strMessage3 = "Gracz 2 korzysta z klawiszy strza³ka w górê i dó³.";
+        AnsiString strMessage4 = "Kto pierwszy uzyska 10 punktów, ten wygrywa :)";
+	AnsiString strMessage5 = "Aby rozpocz¹c grê, wcisnij OK. Powodzenia!.";
+
+	ShowMessage(strMessage1 + sLineBreak + strMessage2 + sLineBreak +
+			strMessage3 + sLineBreak + strMessage4 + sLineBreak + strMessage5);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+       Form1->timer_b->Enabled = false;
+       Form1->btnShowMsg->Click();
+       showStart();
+}
+//---------------------------------------------------------------------------
+

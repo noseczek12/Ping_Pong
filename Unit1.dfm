@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = -1456
-  Top = 15
+  Left = -1343
+  Top = 230
   Width = 1215
   Height = 788
   Caption = 'Ping Pong'
@@ -13,6 +13,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
@@ -57196,6 +57197,24 @@ object Form1: TForm1
       FFFF}
     Transparent = True
   end
+  object Label3: TLabel
+    Left = 552
+    Top = 256
+    Width = 96
+    Height = 37
+    Alignment = taCenter
+    Caption = 'Label3'
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    Transparent = True
+    Layout = tlCenter
+  end
   object Button1: TButton
     Left = 344
     Top = 424
@@ -57211,6 +57230,16 @@ object Form1: TForm1
     TabOrder = 0
     Visible = False
     OnClick = Button1Click
+  end
+  object btnShowMsg: TButton
+    Left = 560
+    Top = 712
+    Width = 75
+    Height = 25
+    Caption = 'Show &Msg'
+    TabOrder = 1
+    Visible = False
+    OnClick = btnShowMsgClick
   end
   object timer_b: TTimer
     Interval = 15
